@@ -1,0 +1,91 @@
+/* ธีมสีส้มอ่อน-ขาว (EduHub) — แก้สีทั้งระบบได้ที่ตัวแปรด้านล่าง */
+:root {
+    --primary:#f97316;        /* ส้มหลัก (ปุ่ม/ไฮไลต์) */
+    --primary-dark:#c2410c;   /* ส้มเข้ม (ตัวอักษรลิงก์/หัวข้อ) */
+    --primary-soft:#ffedd5;   /* ส้มอ่อน (พื้นหลังเมนู/แถบ) */
+    --cream:#fffaf5;          /* พื้นหลังหน้า */
+    --text:#3b2a1d;           /* ตัวอักษรหลัก */
+    --muted:#8b7765;          /* ตัวอักษรรอง */
+    --line:#f3e2d0;           /* เส้นขอบ */
+    --card:#ffffff;
+    --shadow:0 4px 14px rgba(249,115,22,0.08);
+}
+* { box-sizing:border-box; }
+body { font-family:'Kanit',sans-serif; background:linear-gradient(180deg,#fffaf5 0%,#fff1e2 100%); background-attachment:fixed; color:var(--text); margin:0; min-height:100vh; padding-bottom:40px; line-height:1.6; }
+a { color:var(--primary-dark); text-decoration:none; }
+a:hover { text-decoration:underline; }
+
+/* ---------- navbar ---------- */
+.navbar { position:sticky; top:0; background:rgba(255,255,255,0.95); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); box-shadow:0 2px 10px rgba(249,115,22,0.07); z-index:1000; padding:10px 30px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+.logo { font-size:1.4rem; font-weight:600; color:var(--primary); }
+.center-menu { display:flex; gap:4px; flex-wrap:wrap; }
+.center-menu a { color:var(--text); font-size:0.92rem; padding:7px 13px; border-radius:50px; transition:0.2s; }
+.center-menu a:hover { background:var(--primary-soft); color:var(--primary-dark); text-decoration:none; }
+.center-menu a.active { background:var(--primary); color:#fff; font-weight:500; }
+.right-menu { display:flex; align-items:center; gap:12px; }
+.greeting { color:var(--primary-dark); font-size:0.92rem; font-weight:500; }
+.btn-logout { color:#dc2626; border:1px solid #fca5a5; background:#fff; padding:5px 16px; border-radius:50px; font-size:0.9rem; }
+.btn-logout:hover { background:#fee2e2; text-decoration:none; }
+
+/* ---------- container / card ---------- */
+.container { max-width:1100px; margin:30px auto 0; padding:0 20px; }
+h2 { color:var(--text); font-weight:600; font-size:1.7rem; margin:0 0 18px 0; }
+h2:after { content:""; display:block; width:48px; height:4px; background:var(--primary); border-radius:4px; margin-top:6px; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:22px; margin-bottom:20px; box-shadow:var(--shadow); overflow-x:auto; }
+.card h3 { margin-top:0; color:var(--primary-dark); font-size:1.1rem; font-weight:600; }
+.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.stat { text-align:center; }
+.stat .num { font-size:2.6rem; font-weight:600; }
+.muted { color:var(--muted); font-size:0.9rem; }
+.line { padding:8px 0; border-bottom:1px solid var(--line); }
+
+/* ---------- form ---------- */
+input, select { padding:10px 14px; background:#fff; border:1px solid #f0d6bd; border-radius:12px; color:var(--text); font-family:'Kanit',sans-serif; font-size:0.95rem; }
+input::placeholder { color:#b9a493; }
+input:focus, select:focus { outline:none; border-color:var(--primary); box-shadow:0 0 0 3px rgba(249,115,22,0.18); }
+.form-row { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:10px; }
+.form-row input, .form-row select { flex:1; min-width:150px; }
+.btn { padding:10px 22px; border:none; border-radius:50px; background:linear-gradient(135deg,#fb923c,#f97316); color:#431407; font-family:'Kanit',sans-serif; font-weight:600; font-size:0.95rem; cursor:pointer; display:inline-block; transition:0.2s; box-shadow:0 3px 8px rgba(249,115,22,0.25); }
+.btn:hover { transform:translateY(-1px); box-shadow:0 5px 12px rgba(249,115,22,0.35); text-decoration:none; }
+.btn-outline { background:#fff; border:1.5px solid var(--primary); color:var(--primary-dark); box-shadow:none; }
+.btn-outline:hover { background:var(--primary-soft); box-shadow:none; }
+
+/* ---------- badge ---------- */
+.badge { padding:3px 11px; border-radius:50px; font-size:12px; font-weight:500; display:inline-block; }
+.bg-success { background:#dcfce7; color:#166534; }
+.bg-danger { background:#fee2e2; color:#b91c1c; }
+.bg-warning { background:#fef3c7; color:#92400e; }
+.bg-info { background:var(--primary-soft); color:var(--primary-dark); }
+.bg-secondary { background:#f1f1f1; color:#555; }
+
+/* ---------- table ---------- */
+table { width:100%; border-collapse:collapse; }
+th { padding:10px 12px; background:#fff3e6; color:var(--primary-dark); text-align:left; font-weight:500; }
+th:first-child { border-radius:10px 0 0 10px; }
+th:last-child { border-radius:0 10px 10px 0; }
+td { padding:10px 12px; border-bottom:1px solid var(--line); }
+tr:hover td { background:#fffaf5; }
+
+/* ---------- ผลตรวจคุณสมบัติ ---------- */
+.ok:before { content:"✔ "; color:#16a34a; }
+.fail:before { content:"✘ "; color:#dc2626; }
+.missing:before { content:"⚠ "; color:#d97706; }
+ul.reasons { list-style:none; padding-left:0; }
+ul.reasons li { margin-bottom:6px; }
+
+/* ---------- login ---------- */
+.login-box { max-width:400px; margin:90px auto; background:#fff; border:1px solid var(--line); border-radius:28px; padding:42px 36px; text-align:center; box-shadow:0 10px 30px rgba(249,115,22,0.14); }
+.login-box h2 { text-align:center; }
+.login-box h2:after { margin:6px auto 0; }
+.login-box input { width:100%; margin:8px 0; }
+.login-box .btn { width:100%; margin-top:12px; padding:12px; }
+
+/* ---------- มือถือ ---------- */
+@media (max-width:800px) {
+    .grid2, .grid3 { grid-template-columns:1fr; }
+    .navbar { padding:10px 14px; }
+    .center-menu { width:100%; flex-wrap:nowrap; overflow-x:auto; padding-bottom:4px; }
+    .center-menu a { white-space:nowrap; }
+    h2 { font-size:1.4rem; }
+}
